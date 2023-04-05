@@ -9,8 +9,12 @@ public class Utils {
         if(args.size() == 0){
             return false;
         }
-        return
-                args.stream()
-                        .allMatch(StringUtils::isPositiveNumber);
+
+        for(String s : args){
+            if(StringUtils.isPositiveNumber(s) == false){
+                return false;
+            }
+        }
+        return true;
     }
 }
